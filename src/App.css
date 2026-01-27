@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* ===== PAGE ===== */
+body {
+  background: #f4f6fb;
+  color: #1f2937;
+}
+
+/* ===== APP ===== */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== HEADER ===== */
+.header {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== COURSE SECTION ===== */
+.section {
+  flex: 1;
+  padding: 50px 60px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+}
+
+/* ===== COURSE CARD ===== */
+.coursecard {
+  background: white;
+  border-radius: 18px;
+  padding: 28px 26px;
+  text-align: center;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle top accent */
+.coursecard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  background: linear-gradient(90deg, #4f46e5, #6366f1);
+}
+
+.coursecard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* IMAGE */
+.coursecard img {
+  width: 140px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 18px;
+}
+
+/* TITLE */
+.coursecard h3 {
+  font-size: 19px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #111827;
+}
+
+/* DETAILS */
+.coursecard p {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14.5px;
+  margin: 8px 0;
+  color: #374151;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  background: #111827;
+  color: #d1d5db;
+  text-align: center;
+  padding: 14px;
+  font-size: 14px;
+  letter-spacing: 0.4px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .section {
+    padding: 35px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    font-size: 18px;
+  }
+
+  .section {
+    padding: 25px;
+  }
+}
