@@ -6,13 +6,16 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      courses: [
-        { name: "Data Structures", duration: "10 hours", price: "$10", img: "dsa.png" },
-        { name: "Java Programming", duration: "4 hours", price: "$170", img: "java.png" },
-        { name: "React JS", duration: "30 hours", price: "$610", img: "react.png" },
-        { name: "Machine Learning", duration: "20 hours", price: "$320", img: "ml.png" },
-      ]
-    };
+  courses: [
+    { name: "Data Structures", duration: "10 hours", price: "$10", img: "dsa.png" },
+    { name: "Java Programming", duration: "4 hours", price: "$170", img: "java.png" },
+    { name: "React JS", duration: "30 hours", price: "$610", img: "react.png" },
+    { name: "Machine Learning", duration: "20 hours", price: "$320", img: "ml.png" },
+    { name: "Artificial Intelligence", duration: "25 hours", price: "$450", img: "ai.png" },
+    { name: "Deep Learning", duration: "18 hours", price: "$520", img: "dl.png" }
+  ]
+};
+
   }
 
   render() {
