@@ -1,193 +1,95 @@
-/* ================= RESET ================= */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", system-ui, sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
-/* ================= STAR BACKGROUND ================= */
-body {
-  background: radial-gradient(circle at bottom, #1e1b4b, #020617);
-  color: #e5e7eb;
-  overflow-x: hidden;
+/* HEIGHT FIX */
+html,
+body,
+#root {
+  height: 100%;
 }
 
-/* animated stars */
-body::before,
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image:
-    radial-gradient(1.6px 1.6px at 10% 20%, white, transparent),
-    radial-gradient(1.4px 1.4px at 25% 80%, white, transparent),
-    radial-gradient(1.8px 1.8px at 40% 40%, white, transparent),
-    radial-gradient(1.5px 1.5px at 60% 70%, white, transparent),
-    radial-gradient(2px 2px at 75% 30%, white, transparent),
-    radial-gradient(1.6px 1.6px at 85% 85%, white, transparent),
-    radial-gradient(1.4px 1.4px at 50% 15%, white, transparent);
-  background-repeat: repeat;
-  background-size: 220px 220px;
-  animation: starsMove 55s linear infinite;
-  opacity: 0.7;
-  z-index: -2;
-}
-
-body::after {
-  animation-duration: 95s;
-  opacity: 0.45;
-}
-
-@keyframes starsMove {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-1000px);
-  }
-}
-
-/* ================= APP ================= */
+/* APP */
 .app {
-  min-height: 100vh;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
+  background-color: #f4f6f9;
+  color: #1f2937;
 }
 
-/* ================= HEADER (NEON) ================= */
+/* HEADER */
 .header {
-  background: linear-gradient(135deg, #4f46e5, #6366f1, #22d3ee);
-  color: #ffffff;
-  padding: 26px;
+  background-color: #ffffff;
+  padding: 28px;
   text-align: center;
-
-  font-size: 22px;
+  font-size: 32px;
   font-weight: 700;
-  letter-spacing: 0.6px;
-
-  box-shadow:
-    0 0 18px rgba(99, 102, 241, 0.6),
-    0 0 40px rgba(34, 211, 238, 0.45),
-    0 10px 45px rgba(0, 0, 0, 0.75);
-
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 1px solid #e5e7eb;
 }
 
-/* ================= SECTION ================= */
+/* COURSE SECTION */
 .section {
   flex: 1;
-  padding: 70px;
+  padding: 50px 70px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-  gap: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 35px;
 }
 
-/* ================= COURSE CARD ================= */
+/* COURSE CARD */
 .coursecard {
-  background: rgba(15, 23, 42, 0.78);
-  backdrop-filter: blur(16px);
-
-  border-radius: 22px;
-  padding: 34px 32px;
+  background-color: #ffffff;
+  border-radius: 18px;
+  padding: 24px;
+  border: 1px solid #e5e7eb;
   text-align: center;
-
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  transition: background 0.3s ease, border-color 0.3s ease;
-
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65);
+  transition: all 0.25s ease;
 }
 
 .coursecard:hover {
-  background: rgba(15, 23, 42, 0.88);
-  border-color: rgba(255, 255, 255, 0.28);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
-/* ================= IMAGE ================= */
+/* IMAGE */
 .coursecard img {
-  width: 145px;
-  height: 125px;
-  object-fit: contain;
-  margin-bottom: 22px;
+  width: 80px;
+  margin-bottom: 18px;
 }
 
-/* ================= TITLE ================= */
+/* COURSE TITLE */
 .coursecard h3 {
-  font-size: 21px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: #f9fafb;
-}
-
-/* ================= INFO ROWS ================= */
-.coursecard p {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 13px 18px;
-  margin: 14px 0;
-
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.07);
-
-  font-size: 14.5px;
-  color: #e0e7ff;
-}
-
-.coursecard p span:first-child {
-  color: #c7d2fe;
-  font-weight: 500;
-}
-
-.coursecard p span:last-child {
+  font-size: 22px;
   font-weight: 600;
-  color: #ffffff;
+  margin-bottom: 12px;
+  color: #111827;
 }
 
-/* ================= COURSE FEE (BRIGHTER) ================= */
-.coursecard p:last-child {
-  justify-content: center;
-  margin-top: 20px;
-
-  font-size: 15.5px;
-  font-weight: 800;
-
-  background: linear-gradient(
-    135deg,
-    rgba(99, 102, 241, 0.55),
-    rgba(34, 211, 238, 0.45)
-  );
-
-  border: 1px solid rgba(165, 180, 252, 0.65);
-  color: #ffffff;
+/* TEXT */
+.coursecard p {
+  font-size: 15px;
+  margin-bottom: 6px;
+  color: #4b5563;
 }
 
-/* ================= FOOTER ================= */
+.coursecard span:first-child {
+  font-weight: 500;
+  color: #1f2937;
+}
+
+/* FOOTER */
 .footer {
-  background: rgba(2, 6, 23, 0.9);
-  color: #c7d2fe;
+  background-color: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  padding: 18px;
   text-align: center;
-  padding: 16px;
   font-size: 14px;
-  backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 900px) {
-  .section {
-    padding: 45px;
-  }
-}
-
-@media (max-width: 600px) {
-  .header {
-    font-size: 18px;
-  }
-
-  .section {
-    padding: 25px;
-    grid-template-columns: 1fr;
-  }
+  color: #6b7280;
 }
